@@ -5,37 +5,48 @@
 const portfolio = {
     // Personal information object
     owner: {
-        name: "Your Name Here",        // TODO: Add your name
-        title: "Your Title Here",      // TODO: Add your professional title
-        email: "your.email@example.com", // TODO: Add your email
-        location: "Your City, State",  // TODO: Add your location
-        bio: "Write a brief description about yourself here. What are you passionate about? What are your goals?" // TODO: Add your bio
+        name: "Alice",        // TODO: Add your name
+        title: "Student",      // TODO: Add your professional title
+        email: "alicesyli@berkeley.edu", // TODO: Add your email
+        location: "Berkeley, CA",  // TODO: Add your location
+        bio: "I’m an EECS undergraduate at UC Berkeley passionate about AI/ML, software engineering, and building technology that can positively impact people’s lives. I’m especially interested in human-centered AI, agentic systems, and the intersection of AI with cognitive science. My goal is to grow as an AI/ML engineer, gain hands-on experience, and build reliable, meaningful technology that addresses real-world problems." // TODO: Add your bio
     },
     
     // Skills as an array
     skills: [
-        "Add your first skill here",   // TODO: Replace with your actual skills
-        "Add your second skill here",  // TODO: Add more skills
-        "Add your third skill here"    // TODO: Students should have at least 5 skills
-        // TODO: Add more skills - aim for 5-7 skills total
+        "Python",   // TODO: Replace with your actual skills
+        "Java",  // TODO: Add more skills
+        "HTML",    // TODO: Students should have at least 5 skills
+        "CSS", 
+        "Javascript", 
+        "Figma" // TODO: Add more skills - aim for 5-7 skills total
     ],
     
     // Projects as array of objects
     projects: [
         {
-            title: "Your First Project",
-            description: "Describe what this project does and why it's interesting",
-            technologies: ["HTML", "CSS"], // Array of technologies used
-            completionDate: "2025-08-15",   // When you completed it
+            title: "PawPal",
+            description: "An AI-powered pet care app that uses personalized recommendations and a RAG-based knowledge system to help pet owners manage daily care tasks and schedules.",
+            technologies: ["Streamlit", "Python", "You.API"], // Array of technologies used
+            completionDate: "2026-04-29",   // When you completed it
             featured: true                   // Is this a featured project?
         },
         {
-            title: "Your Second Project", 
-            description: "Another project description here",
-            technologies: ["HTML", "CSS", "JavaScript"],
-            completionDate: "2025-09-01",
+            title: "Music Recommender", 
+            description: "An AI-powered music recommendation system that uses song features such as genre, mood, energy, and danceability to recommend songs based on user preferences.",
+            technologies: ["Python", "Machine Learning", "Recommender System"],
+            completionDate: "2026-04-14",
+            featured: false
+        },
+
+        {
+            title: "Job Genie", 
+            description: "An AI-powered Chrome extension that analyzes resumes and provides personalized job recommendations to help users streamline their job search.An AI-powered music recommendation system that uses song features such as genre, mood, energy, and danceability to recommend songs based on user preferences.",
+            technologies: ["Javascript", "HTML", "CSS", "JSON"],
+            completionDate: "2026-04-14",
             featured: false
         }
+        
         // TODO: Add more projects during class
     ],
     
@@ -43,7 +54,7 @@ const portfolio = {
     availability: {
         freelance: false,    // TODO: Set to true if available for freelance work
         fullTime: false,     // TODO: Set to true if seeking full-time position
-        partTime: true       // TODO: Set to true if available for part-time work
+        partTime: true      // TODO: Set to true if available for part-time work
     }
 };
 
@@ -53,9 +64,27 @@ console.log("Full portfolio object:", portfolio);
 
 // TODO: During class, we'll add more console.log() statements to explore the data
 // Examples students will try:
-// console.log("Owner name:", portfolio.owner.name);
-// console.log("First skill:", portfolio.skills[0]);
-// console.log("Number of projects:", portfolio.projects.length);
+console.log("My name:", portfolio.owner.name);
+console.log("Total skill:", portfolio.skills.length);
+console.log("First Project:", portfolio.projects[0]);
+
+
+// Create summary statistics
+console.log("Portfolio Summary:");
+console.log(`${portfolio.owner.name} has ${portfolio.skills.length} skills`);
+console.log(`and ${portfolio.projects.length} projects`);
+
+// Find featured projects
+for (let i = 0; i < portfolio.projects.length; i++) {
+    if (portfolio.projects[i].featured === true) {
+        console.log("⭐ Featured:", portfolio.projects[i].title);
+    }
+}
+
+// Convert to JSON for storage/debugging
+let dataAsJSON = JSON.stringify(portfolio, null, 2);
+console.log("Portfolio as JSON:", dataAsJSON);
+
 
 // TODO: Students will learn to access nested properties
 // console.log("Email:", portfolio.owner.email);
